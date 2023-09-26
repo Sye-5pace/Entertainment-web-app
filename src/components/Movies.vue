@@ -1,7 +1,25 @@
-<script setup>
-    import { ref } from 'vue';
-        
-    const movieList = [
+<script setup lang="ts">
+    import { defineProps,computed } from 'vue';
+
+    const { title } = defineProps(['title'])
+    
+    interface MovieType {
+      title: string;
+      thumbnail: {
+        regular: {
+          small: string;
+          medium: string;
+          large: string;
+        };
+      };
+      year: number;
+      category: string;
+      rating: string;
+      isBookmarked: boolean;
+      isTrending: boolean;
+    }
+
+    const movieList:MovieType[] = [
       {
         "title": "The Great Lands",
         "thumbnail": {
@@ -364,13 +382,23 @@
       }
     ]
 
+    const movies = computed(() => {
+      const query = title.toLowerCase().trim();
+      if(!query ){
+        return movieList;
+      }
+
+      return movieList.filter((movie) => 
+        movie.title.toLowerCase().includes(query)
+      )
+    })
 </script>
 
 <template>
     <section class="relative flex flex-col pr-4 gap-y-3">
         <h3 class="text-[2rem] font-light text-[#fff]">Recommended for you</h3>
         <div class="grid grid-cols-4 text-white gap-y-[2rem]  children:rounded-[0.5rem]">
-            <div v-for="(item,index) in movieList" :key="index" class="flex flex-col gap-y-1">
+            <div v-for="(item, index) in movies" :key="index" class="flex flex-col gap-y-1">
                 <div class="flex w-full">
                   <img :src="item.thumbnail.regular.small" class=" relative w-[20rem] h-[10.9125rem] rounded-[0.5rem] object-cover z-0"/>
                   <div class="relative top-6 right-10 w-9 h-8 rounded-full bg-vulcan hover:bg-white bg-opacity-40 z-[999] flex items-center justify-center cursor-pointer">

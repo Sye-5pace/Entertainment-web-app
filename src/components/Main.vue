@@ -1,18 +1,20 @@
 <script setup lang="ts">
- import { ref,computed } from 'vue'
- import Movies from './Movies.vue'
- import Trends from './Trends.vue'
- 
-  //prop for movie/tvseries title
- const title = ref('')
+    import Home from './Home.vue'
+    import { ref,computed } from 'vue'
+    import Movies from './Movies.vue'
+    import Trends from './Trends.vue'
 
- const handleInputQuery = (event)=> {
-    console.log('Input value:', event.target.value);
-    title.value = event.target.value
-    console.log('Title value:', title.value);
- }
+
+    //prop for movie/tvseries title
+    const title = ref('')
+
+    const handleInputQuery = (event)=> {
+        console.log('Input value:', event.target.value);
+        title.value = event.target.value
+        console.log('Title value:', title.value);
+    }
   
- interface MovieType {
+    interface MovieType {
       title: string;
       thumbnail: {
         regular: {
@@ -28,7 +30,7 @@
       isTrending: boolean;
     }
  
- const movieList:MovieType[] = [
+    const movieList:MovieType[] = [
       {
         "title": "The Great Lands",
         "thumbnail": {
@@ -391,7 +393,7 @@
       }
     ]
  
- const movies = computed(() => {
+    const movies = computed(() => {
       const query = title.value.toLowerCase().trim()
       if(!query ){
         return movieList;
@@ -400,9 +402,8 @@
       return movieList.filter((movie) => 
         movie.title.toLowerCase().includes(query),
       )
- })
-
-
+    })
+  
  </script>
 
 <template>
@@ -411,8 +412,7 @@
             <img src="../../public/assets/icon-search.svg" class="w-8 h-8" alt="">
             <input  type="text" placeholder="Search for movies or TV series" class="placeholder::text-[1.5rem] font-light text-opacity-50 bg-vulcan w-full focus:outline-none text-[#fff]" :value="title" @input="handleInputQuery">
         </div>
-        <Trends/>
-        <Movies :movies="movies"/>
+        <Home :movies="movies"/>
     </section>
 </template>
 

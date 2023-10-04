@@ -1,7 +1,7 @@
 <script setup lang="ts">
-    import { ref,computed, defineProps } from 'vue'
-    import Movies from './Movies.vue'
-    import Trends from './Trends.vue'
+    import { ref, defineProps } from 'vue'
+    import Movies from './Home/Movies.vue'
+    import Trends from './Home/Trends.vue'
 
 
     const { movies } = defineProps(['movies'])

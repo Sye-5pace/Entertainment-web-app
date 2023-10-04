@@ -13,7 +13,7 @@
 
 <template>
     <section class="flex flex-col">
-        <h2 class="text-[2rem]">Movies</h2>
+        <h2 class="text-[2rem] text-white">Movies</h2>
         <div class="grid grid-cols-4 text-white gap-y-[2rem]  children:rounded-[0.5rem]">
             <div v-for="(item, index) in movieOnly" :key="index" class="flex flex-col gap-y-1">
                 <div class="flex w-full">

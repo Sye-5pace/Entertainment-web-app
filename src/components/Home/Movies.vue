@@ -1,10 +1,8 @@
 <script setup lang="ts">
-    import { defineProps,computed,ref } from 'vue';
+    import { defineProps } from 'vue';
 
     const { movies } = defineProps(['title','movies'])
-    
-
-    
+        
         
   
 </script>

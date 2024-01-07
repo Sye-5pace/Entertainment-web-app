@@ -26,7 +26,6 @@ const router = createRouter({
         { path: '/tvseries', name: 'Tvseries', component: () => import('../src/components/Tvseries.vue') },
         { path: '/bookmarked', name: 'Bookmarked', component: () => import('../src/components/Bookmarked.vue')}
     ],
-    base: '/home'
 })
 
 //creating vue app,connecting router and pinia store

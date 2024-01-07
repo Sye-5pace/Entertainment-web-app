@@ -1,11 +1,12 @@
 <script setup lang="ts">
     import { ref,defineProps } from 'vue'
-    
+    import MovieType from '../interface'
+
     const { movies } = defineProps(['movies'])
     const tvseriesOnly = ref([])
 
     const tvseriesCat = () => {
-        tvseriesOnly.value = movies.filter(movie => movie.category === 'TV Series')
+        tvseriesOnly.value = movies.filter((movie: MovieType) => movie.category === 'TV Series')
     }
 
     tvseriesCat();

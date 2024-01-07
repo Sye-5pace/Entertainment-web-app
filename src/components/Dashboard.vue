@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { ref,computed } from 'vue'
     import { RouterView } from 'vue-router'
-
+    import MovieType from '../interface'
 
     //prop for movie/tvseries title
     const title = ref('')
@@ -12,21 +12,7 @@
         console.log('Title value:', title.value);
     }
   
-    interface MovieType {
-      title: string;
-      thumbnail: {
-        regular: {
-          small: string;
-          medium: string;
-          large: string;
-        };
-      };
-      year: number;
-      category: string;
-      rating: string;
-      isBookmarked: boolean;
-      isTrending: boolean;
-    }
+   
  
     const movieList:MovieType[] = [
       {

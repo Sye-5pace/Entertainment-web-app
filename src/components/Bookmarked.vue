@@ -1,11 +1,13 @@
 <script setup lang="ts">
     import { ref,defineProps } from 'vue';
+    import MovieType from '../interface'
+
 
     const { movies } = defineProps([ 'movies' ])
     const bookmarkOnly = ref([])
 
     const bookmarkCat = () => {
-        bookmarkOnly.value = movies.filter(movie => movie.isBookmarked )
+        bookmarkOnly.value = movies.filter((movie: MovieType) => movie.isBookmarked )
     }
 
     bookmarkCat()

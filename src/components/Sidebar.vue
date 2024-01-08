@@ -36,7 +36,7 @@
                     </router-link>                 
                 </div>
             </div>
-            <img src="../../public/assets/image-avatar.png" class="w-10 h-10 border-[#fff] border rounded-full" alt="">
+            <img src="../../public/assets/imageavatar.png" class="w-10 h-10 border-[#fff] border rounded-full" alt="">
         </div>
     </section>
 </template>

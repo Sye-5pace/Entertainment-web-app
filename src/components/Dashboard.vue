@@ -6,7 +6,7 @@
     //prop for movie/tvseries title
     const title = ref('')
 
-    const handleInputQuery = (event)=> {
+    const handleInputQuery = (event: any)=> {
         console.log('Input value:', event.target.value);
         title.value = event.target.value
         console.log('Title value:', title.value);

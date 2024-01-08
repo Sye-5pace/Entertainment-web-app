@@ -3,7 +3,7 @@
     import MovieType from '../interface'
 
     const { movies } = defineProps(['movies'])
-    const tvseriesOnly = ref([])
+    const tvseriesOnly = ref<MovieType>([])
 
     const tvseriesCat = () => {
         tvseriesOnly.value = movies.filter((movie: MovieType) => movie.category === 'TV Series')

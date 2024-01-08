@@ -4,7 +4,7 @@
 
 
     const { movies } = defineProps([ 'movies' ])
-    const bookmarkOnly = ref([])
+    const bookmarkOnly = ref<MovieType>([])
 
     const bookmarkCat = () => {
         bookmarkOnly.value = movies.filter((movie: MovieType) => movie.isBookmarked )

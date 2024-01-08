@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { ref } from 'vue'
-    import Iconplay from '../../public/assets/iconplay.svg'
+    import Iconplay from '../../../public/assets/iconplay.svg'
 
 
     const trends = ref([

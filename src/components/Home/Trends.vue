@@ -1,5 +1,7 @@
 <script setup lang="ts">
     import { ref } from 'vue'
+    import Iconplay from '../../public/assets/iconplay.svg'
+
 
     const trends = ref([
     {
@@ -58,7 +60,7 @@
                 <!-- trends img -->
                 <div :style="{ backgroundImage: `url(${item.trending})`}" class="bg-cover w-[29.375rem] h-[14.375rem] rounded-[0.5rem] flex items-center justify-center">
                     <div id="play"  class="w-[7.3125rem] h-[3rem] rounded-[1.78125rem] bg-[#fff] bg-opacity-25 flex gap-[1.1875rem] items-center justify-center cursor-pointer" >
-                        <img src="../../public/assets/iconplay.svg" alt="">
+                        <img :src="Iconplay" alt="">
                         <h3>Play</h3>
                     </div>
                     <div class="w-8 h-8 rounded-full bg-vulcan bg-opacity-40 z-[999] flex items-center justify-center hover:bg-white cursor-pointer self-start relative left-[9rem] top-[1.875rem]">

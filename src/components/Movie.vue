@@ -19,7 +19,7 @@
 
 
     const { movies } = defineProps(['movies'])
-    const movieOnly = ref<MovieType>([])
+    const movieOnly = ref<MovieType[]>([])
 
     const movieCat = () => {
         movieOnly.value = movies.filter((movie: MovieType) => movie.category === 'Movie')

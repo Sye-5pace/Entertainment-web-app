@@ -1,10 +1,25 @@
 <script setup lang="ts">
     import { ref,defineProps } from 'vue'
-    import MovieType from '../interface'
+
+    interface MovieType {
+      title: string;
+      thumbnail: {
+        regular: {
+          small: string;
+          medium: string;
+          large: string;
+        };
+      };
+      year: number;
+      category: string;
+      rating: string;
+      isBookmarked: boolean;
+      isTrending: boolean;
+    }
 
 
     const { movies } = defineProps(['movies'])
-    const movieOnly = ref([])
+    const movieOnly = ref<MovieType>([])
 
     const movieCat = () => {
         movieOnly.value = movies.filter((movie: MovieType) => movie.category === 'Movie')

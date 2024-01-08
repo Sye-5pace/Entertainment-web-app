@@ -406,7 +406,7 @@
 <template>
     <section class="flex flex-col w-full overflow-x-hidden gap-y-5">
         <div class="flex w-full gap-2">
-            <img src="../../public/assets/icon-search.svg" class="w-8 h-8" alt="">
+            <img src="../../public/assets/iconsearch.svg" class="w-8 h-8" alt="">
             <input  type="text" placeholder="Search for movies or TV series" class="placeholder::text-[1.5rem] font-light text-opacity-50 bg-vulcan w-full focus:outline-none text-[#fff]" :value="title" @input="handleInputQuery">
         </div>
         <router-view :movies="movies"/>

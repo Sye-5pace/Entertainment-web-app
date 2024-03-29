@@ -55,10 +55,10 @@
 <template>
     <div class="flex flex-col gap-y-2" >
         <h3 class="text-[#fff] font-light text-[2rem]">Trending</h3>
-        <div class="flex text-[#fff] flex-row gap-2 h-[15.875rem] w-full overflow-x-scroll">
+        <div class="flex text-[#fff] flex-row gap-7 h-[15.875rem] w-full overflow-x-scroll">
             <div class="" v-for="(item,index) in trends" :key="index">
                 <!-- trends img -->
-                <div :style="{ backgroundImage: `url(${item.trending})`}" class="bg-cover w-[29.375rem] h-[14.375rem] rounded-[0.5rem] flex items-center justify-center">
+                <div :style="{ backgroundImage: `url(${item.trending})`}" class="bg-cover w-[29.375rem] h-[14rem] rounded-[0.5rem] flex items-center justify-center">
                     <div id="play"  class="w-[7.3125rem] h-[3rem] rounded-[1.78125rem] bg-[#fff] bg-opacity-25 flex gap-[1.1875rem] items-center justify-center cursor-pointer" >
                         <img :src="Iconplay" alt="">
                         <h3>Play</h3>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-    import { ref } from 'vue'
     import Iconplay from '../../../public/assets/iconplay.svg'
     import { TrendType } from '../../interface'
 
 
-    const trends: TrendType[] = ref([
+    const trends: TrendType[] = [
     {
         title: "Beyond Earth",
         trending: `../assets/thumbnails/beyond-earth/trending/large.jpg`,
@@ -50,7 +49,7 @@
         isBookmarked: true,
         isTrending: true
     },
- ])
+ ]
 </script>
 
 <template>

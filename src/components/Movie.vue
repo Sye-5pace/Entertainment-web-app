@@ -1,24 +1,8 @@
 <script setup lang="ts">
     import { ref,defineProps } from 'vue'
+    import { MovieType } from '../interface'
 
-    interface MovieType {
-      title: string;
-      thumbnail: {
-        regular: {
-          small: string;
-          medium: string;
-          large: string;
-        };
-      };
-      year: number;
-      category: string;
-      rating: string;
-      isBookmarked: boolean;
-      isTrending: boolean;
-    }
-
-
-    const { movies } = defineProps(['movies'])
+    const { movies } = defineProps(['movies']) as { movies: MovieType[] }
     const movieOnly = ref<MovieType[]>([])
 
     const movieCat = () => {
@@ -31,7 +15,7 @@
 <template>
     <section class="flex flex-col">
         <h2 class="text-[2rem] text-white">Movies</h2>
-        <div class="grid grid-cols-4 text-white gap-y-[2rem]  children:rounded-[0.5rem]">
+        <div class="grid grid-cols-4 text-white gap-y-[2rem]  children:rounded-[0.5rem] mobile:grid-cols-2">
             <div v-for="(item, index) in movieOnly" :key="index" class="flex flex-col gap-y-1">
                 <div class="flex w-full">
                   <img :src="item.thumbnail.regular.small" class=" relative w-[20rem] h-[10.9125rem] rounded-[0.5rem] object-cover z-0"/>

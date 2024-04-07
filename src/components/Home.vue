@@ -2,22 +2,8 @@
     import { defineProps } from 'vue'
     import Movies from './Home/Movies.vue'
     import Trends from './Home/Trends.vue'
-
-    interface MovieType {
-    title: string;
-    thumbnail: {
-      regular: {
-        small: string;
-        medium: string;
-        large: string;
-      };
-    };
-    year: number;
-    category: string;
-    rating: string;
-    isBookmarked: boolean;
-    isTrending: boolean;
-    }
+    import { MovieType } from '../interface'
+    
 
     const { movies } = defineProps(['movies']) as { movies: MovieType[] }
 

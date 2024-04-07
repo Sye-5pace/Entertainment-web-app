@@ -1,9 +1,10 @@
 <script setup lang="ts">
     import { ref } from 'vue'
     import Iconplay from '../../../public/assets/iconplay.svg'
+    import { TrendType } from '../../interface'
 
 
-    const trends = ref([
+    const trends: TrendType[] = ref([
     {
         title: "Beyond Earth",
         trending: `../assets/thumbnails/beyond-earth/trending/large.jpg`,

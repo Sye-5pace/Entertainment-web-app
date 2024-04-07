@@ -1,23 +1,9 @@
 <script setup lang="ts">
   import { ref,computed } from 'vue'
   import { RouterView } from 'vue-router'
+  import { MovieType } from '../interface'
   
-  interface MovieType {
-    title: string;
-    thumbnail: {
-      regular: {
-        small: string;
-        medium: string;
-        large: string;
-      };
-    };
-    year: number;
-    category: string;
-    rating: string;
-    isBookmarked: boolean;
-    isTrending: boolean;
-  }
-  
+    
   const title = ref('')
   const handleInputQuery = (event: any)=> {
       console.log('Input value:', event.target.value);

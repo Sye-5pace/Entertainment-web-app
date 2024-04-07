@@ -6,6 +6,11 @@ export default {
     "./src/**/*.{vue,ts,js}",
   ],
   theme: {
+    screen: {
+      'mobile':{'min':'200px','max':'427px'},
+      'tablet':{'min':'427px','max':'782px'},
+      'laptop': {'min':'782.1px'}
+    },
     fontFamily: {
       outfit: ['Outfit','sans-serf']
     },
